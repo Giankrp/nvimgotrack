@@ -15,7 +15,10 @@ var (
 	colorWhite       = lipgloss.Color("#E4E4EF")
 	colorDim         = lipgloss.Color("#8888AA")
 
-	// Title
+	// ── Title bar ────────────────────────────────────────────────────────
+
+	// titleStyle is applied to the top-level title bar
+	// ("⚡ NvimGoTrack — Plugin Breaking-Change Tracker").
 	titleStyle = lipgloss.NewStyle().
 			Bold(true).
 			Foreground(colorAccent).
