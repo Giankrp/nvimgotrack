@@ -12,18 +12,6 @@ El paquete sigue el patrón **Elm-Architecture** de Bubble Tea con tres métodos
 | `Update(msg)` | Procesa mensajes (resize, teclas, resultados de análisis). |
 | `View()` | Renderiza el frame actual según el estado del modelo. |
 
-```mermaid
-flowchart TD
-    Init["Init()"] -->|spinner.Tick + analyzeNext(0)| Loop
-    Loop["Update()"] -->|pluginAnalyzed| Store["Guardar report\n+ analyzeNext(i+1)"]
-    Store --> Loop
-    Loop -->|allDone| Sort["SortReports()\nloading = false"]
-    Sort --> Render["View()"]
-    Loop -->|KeyMsg| Keys["handleKey()"]
-    Keys --> Render
-    Loop -->|WindowSizeMsg| Resize["Actualizar width/height"]
-    Resize --> Render
-```
 
 ## Pantallas
 
